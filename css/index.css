@@ -1,0 +1,531 @@
+/* ------------------------------------| variables |---------------------------------------- */
+/* ---------------------------------------| Tags |------------------------------------------ */
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+}
+input[type = checkbox]{
+    display: none;
+}
+section.wrapper{
+    display: grid;
+    grid-template-rows: repeat(10 , 100px);
+    margin: 20px auto;
+}
+/* ---------------------------------------| Font-icon (icomoon) |------------------------------------------ */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon/fonts/icomoon.eot?xe19qw');
+  src:  url('../fonts/icomoon/fonts/icomoon.eot?xe19qw#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/fonts/icomoon.ttf?xe19qw') format('truetype'),
+    url('../fonts/icomoon/fonts/icomoon.woff?xe19qw') format('woff'),
+    url('../fonts/icomoon/fonts/icomoon.svg?xe19qw#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-checkmark2:before {
+  content: "\e960";
+}
+.icon-cancel2:before {
+  content: "\e961";
+}
+.icon-sun:before {
+  content: "\e902";
+}
+.icon-moon:before {
+  content: "\e903";
+}
+
+/* ---------------------------------------| toggle 1 |------------------------------------------ */
+section.wrapper > div.toggle_1{
+    margin: 10px auto;
+    color: #ff00e6;
+}
+section.wrapper > div.toggle_1 > label{
+    width: 60px;
+    height: 30px;
+    display: block;
+}
+section.wrapper > div.toggle_1 > .toggle-lable-1{
+    margin: 20px auto;
+    width: 60px;
+    height: 30px;
+    background-color: rgb(215, 214, 214);
+    border: 1px solid #e7e7e7;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+}
+section.wrapper > div.toggle_1 > .toggle-lable-1::after{
+    content: '';
+    width: 29px;
+    height: 29px;
+    background-color: rgb(177, 177, 177);
+    border: 2.5px solid rgb(200, 200, 200);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0 , -50%);
+    transition: 0.5s ease-in-out;
+}
+section.wrapper > div.toggle_1 > #toggle-input-1:checked + .toggle-lable-1::after{
+    background-color: rgb(151, 235, 172);
+    border: 2.5px solid rgb(181, 241, 195);
+    top: 50%;
+    left:100%;
+    transform: translate(-100% , -50%);
+}
+section.wrapper > div.toggle_1 > #toggle-input-1:checked + .toggle-lable-1{
+    background-color: rgb(203, 235, 211);
+}
+/* ---------------------------------------| toggle 2 |------------------------------------------ */
+section.wrapper > div.toggle_2 > label{
+    width: 70px;
+    height: 10px;
+    display: block;
+}
+section.wrapper > div.toggle_2 > .toggle-lable-2{
+    margin: 50px auto;
+    width: 70px;
+    height: 10px;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #e7e7e7;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+}
+section.wrapper > div.toggle_2 > .toggle-lable-2::after{
+    content: '';
+    width: 29px;
+    height: 29px;
+    background-color: rgb(189, 0, 0);
+    border: 2.5px solid rgb(200, 200, 200);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0 , -50%);
+    transition: 0.5s ease-in-out;
+}
+section.wrapper > div.toggle_2 > #toggle-input-2:checked + .toggle-lable-2::after{
+    background-color: rgb(0, 158, 40);
+    border: 2.5px solid rgb(181, 241, 195);
+    top: 50%;
+    left:100%;
+    transform: translate(-100% , -50%);
+}
+section.wrapper > div.toggle_2 > #toggle-input-2:checked + .toggle-lable-2{
+    background-color: rgb(32, 32, 32);
+}
+/* ---------------------------------------| toggle 3 |------------------------------------------ */
+section.wrapper > div.toggle_3 > label{
+    margin: 20px auto;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0 , 0.4), inset 0px -3px 10px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+section.wrapper > div.toggle_3 > label  i{
+    color: white;
+    padding: 0 2px;
+    font-size: 25px;
+    z-index: 10;
+}
+section.wrapper > div.toggle_3 > label::after{
+    content: '';
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(-8px , -50%);
+    background: linear-gradient(180deg , #ffcc89 , #d8860b);
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+section.wrapper > div.toggle_3 > input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+section.wrapper > div.toggle_3 > input:checked + label{
+    background-color: #242424;
+}
+section.wrapper > div.toggle_3 > input:checked + label::after{
+    top: 50%;
+    left: 95%;
+    transform: translate(-90% , -50%);
+    background: linear-gradient(180deg,#777 , #3a3a3a);
+}
+section.wrapper > div.toggle_3 > label:active::after{
+    width: 45px;
+    border-radius: 25px;
+}
+section.wrapper > div.toggle_3 > .background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: -5;
+    position: absolute;
+    transition: 0.3s;
+}
+section.wrapper > div.toggle_3 > input:checked ~ .background{
+    background: #242424;
+}
+/* ---------------------------------------| toggle 4 |------------------------------------------ */
+section.wrapper > div.toggle_4 > label{
+    width: 80px;
+    height: 15px;
+    display: block;
+}
+section.wrapper > div.toggle_4 > .toggle-lable-4{
+    margin: 20px auto;
+    width: 80px;
+    height: 15px;
+    position: relative;
+    background-color: #bebebe;
+    border-radius: 50px;
+    cursor: pointer;
+}
+section.wrapper > div.toggle_4 > .toggle-lable-4::after{
+    content: '';
+    width: 15px;
+    height: 45px;
+    position: absolute;
+    top: 0;
+    left: -5%;
+    transform: translate(20% , 0);
+    background-color: #ffffff;
+    border: 1px solid #dedede;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 1s;
+    
+}
+section.wrapper > div.toggle_4 > #toggle-input-4:checked ~ .toggle-lable-4::after{
+    top: 0;
+    left: -5%;
+    transform: translate(20% , 0);
+    background-color: #ffffff;
+    animation-name: epic-easing-spring-swift;
+    animation-duration: 2000ms;
+    /* animation-direction: alternate-reverse; */
+    /* animation-timing-function: ; */
+    /* animation-iteration-count: infinite; */
+    /* animation-play-state: running; */
+    /* animation-direction:alternate; */
+    animation-fill-mode:forwards;
+}
+section.wrapper > div.toggle_4 > #toggle-input-4:checked ~ .toggle-lable-4{
+    background-color: #2af52a;
+}
+/* ---------------------------------------| toggle 5 |------------------------------------------ */
+section.wrapper > div.toggle_5{
+    margin: 20px auto;
+}
+section.wrapper > div.toggle_5 > .toggle-lable-5{
+    width: 60px;
+    height: 30px;
+    clip-path: polygon(50%,10%,50%);
+    background-color: #d8d8d8;
+    border-radius: 999px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: 0.35s ease;
+}
+section.wrapper > div.toggle_5 > .toggle-lable-5 .circle{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: 0.35s ease;
+}
+section.wrapper > div.toggle_5 > #toggle-input-5:checked ~ .toggle-lable-5 .circle{
+    transform:translateX(24px);
+    background: #b8dfff;
+}
+section.wrapper > div.toggle_5 > .toggle-lable-5:active .circle{
+    width: 26px;
+}
+section.wrapper > div.toggle_5 > #toggle-input-5:checked ~ .toggle-lable-5:active .circle{
+    transform: translateX(22px);
+}
+/* ---------------------------------------| toggle 6 |------------------------------------------ */
+section.wrapper > div.toggle_6 {
+    position: relative;
+}
+section.wrapper > div.toggle_6 > label{
+    width: 60px;
+    height: 30px;
+    display: block;
+}
+section.wrapper > div.toggle_6 > .toggle-lable-6{
+    margin: 0 auto;
+    width: 60px;
+    height: 30px;
+    background-color: #c2afe7;
+    border: 1px solid black;
+    box-shadow: 3px 3px 0px 2px black;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50% , 0);
+    z-index: 10;
+    transition: 0.09s;
+}
+section.wrapper > div.toggle_6 > .toggle-lable-6::after{
+    content: 'off';
+    padding: 3px 3px;
+    width: 28px;
+    height: 28px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-30% , -50%);
+    z-index: -9;
+    transition: 0.09s;
+}
+section.wrapper > div.toggle_6 > #toggle-input-6:checked ~ .toggle-lable-6{
+    background-color: #5a1ad1;
+    position: absolute;
+    top: 0;
+    left: 48%;
+    transform: translate(-48% , 0);
+}
+section.wrapper > div.toggle_6 > #toggle-input-6:checked ~ .toggle-lable-6::after{
+    content: 'on';
+    top: 50%;
+    left: 100%;
+    transform: translate(-100% , -50%);
+}
+/* ---------------------------------------| toggle 7 |------------------------------------------ */
+section.wrapper > div.toggle_7 > label{
+    width: 65px;
+    height: 30px;
+    display: block;
+}
+section.wrapper > div.toggle_7 > .toggle-lable-7{
+    margin: 0 auto;
+    width: 65px;
+    height: 30px;
+    position: relative;
+    background-color: #ededed;
+    border: 3px solid #cbcaca;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+section.wrapper > div.toggle_7 > .toggle-lable-7::after{
+    content: '';
+    width: 24px;
+    height:24px;
+    position: absolute;
+    top: 52%;
+    left: 3.2%;
+    transform: translate(-5% , -50%);
+    background-color: #ededed;
+    border: 1px solid #cbcaca;
+    border-radius: 5px;
+    transition: 0.5s ease-in-out;
+}
+section.wrapper > div.toggle_7 > #toggle-input-7:checked ~ .toggle-lable-7::after{
+    top: 50%;
+    left: 98.8%;
+    transform: translate(-100% , -50%);
+}
+section.wrapper > div.toggle_7 > #toggle-input-7:checked ~ .toggle-lable-7{
+    background-color: #2af52a;
+}
+/* ---------------------------------------| toggle 8 |------------------------------------------ */
+section.wrapper > div.toggle_8 > label{
+    width: 60px;
+    height: 5px;
+    display: block;
+}
+section.wrapper > div.toggle_8 > .toggle-lable-8{
+    margin: 0 auto;
+    width: 60px;
+    height: 5px;
+    position: relative;
+    background-color: #4d4d4d;
+    border: 3px solid #4d4d4d;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+section.wrapper > div.toggle_8 > .toggle-lable-8::after{
+    content: '';
+    width: 25px;
+    height:25px;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(-5% , -50%);
+    background-color: transparent;
+    border: 4px solid #cbcaca;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+section.wrapper > div.toggle_8 > #toggle-input-8:checked ~ .toggle-lable-8::after{
+    background-color: white;
+    border: 1px solid rgb(238, 237, 237);
+    top: 50%;
+    left: 100%;
+    transform: translate(-75% , -50%);
+}
+/* ---------------------------------------| toggle 9 |------------------------------------------ */
+section.wrapper > div.toggle_9{
+    margin: 15px auto;
+    color: #ff00e6;
+}
+
+@keyframes epic-easing-spring-swift {  
+ 0% { transform: translateX(0px) rotate(0deg);}  
+ 1% { transform: translateX(1.09px)rotate(1.2693223577190085deg);}  
+ 2% { transform: translateX(3.64px) rotate(4.819538081556291deg);}  
+ 3% { transform: translateX(7.01px)rotate(10.406856803267436deg);}  
+ 4% { transform: translateX(10.78px)rotate(17.781228985432662deg);}  
+ 5% { transform: translateX(14.69px)rotate(26.690228521133772deg);}  
+ 6% { transform: translateX(18.58px)rotate(36.882632944438214deg);}  
+ 7% { transform: translateX(22.35px)rotate(48.111679400273516deg);}  
+ 8% { transform: translateX(25.95px)rotate(60.137980739029814deg);}  
+ 9% { transform: translateX(29.34px) rotate(72.73209199199262deg);}  
+ 10% { transform: translateX(32.51px) rotate(85.67672299776666deg);}  
+ 11% { transform: translateX(35.47px) rotate(98.76859804588628deg);}  
+ 12% { transform: translateX(38.21px)rotate(111.81996804964854deg);}  
+ 13% { transform: translateX(40.74px)rotate(124.65978493247455deg);}  
+ 14% { transform: translateX(43.08px)rotate(137.13455159576114deg);}  
+ 15% { transform: translateX(45.24px) rotate(149.1088640240288deg);}  
+ 16% { transform: translateX(47.23px)rotate(160.46566477524135deg);}  
+ 17% { transform: translateX(49.06px)rotate(171.10622930713944deg);}  
+ 18% { transform: translateX(50.74px)rotate(180.94990831693266deg);}  
+ 19% { transform: translateX(52.29px)rotate(189.93365053964843deg);}  
+ 20% { transform: translateX(53.72px)rotate(198.01133128235804deg);}  
+ 21% { transform: translateX(55.03px) rotate(205.1529123937885deg);}  
+ 22% { transform: translateX(56.24px) rotate(211.3434594110948deg);}  
+ 23% { transform: translateX(57.35px) rotate(216.5820413199557deg);}  
+ 24% { transform: translateX(58.37px) rotate(220.8805377446924deg);}  
+ 25% { transform: translateX(59.31px)rotate(224.26237748709164deg);}  
+ 26% { transform: translateX(60.17px)rotate(226.76123119202782deg);}  
+ 27% { transform: translateX(60.96px)rotate(228.41967957095056deg);}  
+ 28% { transform: translateX(61.69px)rotate(229.28787709662092deg);}  
+ 29% { transform: translateX(62.36px)rotate(229.42222942911803deg);}  
+ 30% { transform: translateX(62.97px) rotate(228.8841010778955deg);}  
+ 31% { transform: translateX(63.54px)rotate(227.73856797977635deg);}  
+ 32% { transform: translateX(64.06px)rotate(226.05322780863827deg);}  
+ 33% { transform: translateX(64.53px)rotate(223.89707895746852deg);}  
+ 34% { transform: translateX(64.97px) rotate(221.3394772734671deg);}  
+ 35% { transform: translateX(65.37px) rotate(218.4491778055342deg);}  
+ 36% { transform: translateX(65.74px)rotate(215.29346706181335deg);}  
+ 37% { transform: translateX(66.08px)rotate(211.93738959140782deg);}  
+ 38% { transform: translateX(66.39px)rotate(208.44307111472162deg);}  
+ 39% { transform: translateX(66.68px)rotate(204.86913894429267deg);}  
+ 40% { transform: translateX(66.94px) rotate(201.2702390730769deg);}  
+ 41% { transform: translateX(67.18px)rotate(197.69664806804857deg);}  
+ 42% { transform: translateX(67.40px)rotate(194.19397679943097deg);}  
+ 43% { transform: translateX(67.61px)rotate(190.80296206336627deg);}  
+ 44% { transform: translateX(67.80px) rotate(187.5593413197425deg);}  
+ 45% { transform: translateX(67.97px)rotate(184.49380506667032deg);}  
+ 46% { transform: translateX(68.13px)rotate(181.63202080640465deg);}  
+ 47% { transform: translateX(68.28px)rotate(178.99472212042775deg);}  
+ 48% { transform: translateX(68.42px)rotate(176.59785605863487deg);}  
+ 49% { transform: translateX(68.54px) rotate(174.4527818525814deg);}  
+ 50% { transform: translateX(68.67px)rotate(172.56651387802185deg);}  
+ 51% { transform: translateX(68.78px) rotate(170.9420018091515deg);}  
+ 52% { transform: translateX(68.88px) rotate(169.5784410170369deg);}  
+ 53% { transform: translateX(68.98px)rotate(168.47160645823587deg);}  
+ 54% { transform: translateX(69.07px)rotate(167.61420356678425deg);}  
+ 55% { transform: translateX(69.16px)rotate(166.99622999365684deg);}  
+ 56% { transform: translateX(69.23px) rotate(166.6053424225768deg);}  
+ 57% { transform: translateX(69.31px)rotate(166.42722311987862deg);}  
+ 58% { transform: translateX(69.37px)rotate(166.44594133948894deg);}  
+ 59% { transform: translateX(69.44px) rotate(166.6443051928176deg);}  
+ 60% { transform: translateX(69.49px)rotate(167.00420009872101deg);}  
+ 61% { transform: translateX(69.55px)rotate(167.50691044252784deg);}  
+ 62% { transform: translateX(69.60px)rotate(168.13342158779778deg);}  
+ 63% { transform: translateX(69.66px) rotate(168.8646998930661deg);}  
+ 64% { transform: translateX(69.69px)rotate(169.68194888203044deg);}  
+ 65% { transform: translateX(69.74px)rotate(170.56684019389417deg);}  
+ 66% { transform: translateX(69.80px)rotate(171.50171839603865deg);}  
+ 67% { transform: translateX(69.84px)rotate(172.46977916972943deg);}  
+ 68% { transform: translateX(69.89px)rotate(173.45522077775283deg);}  
+ 69% { transform: translateX(69.91px)rotate(174.44336908801876deg);}  
+ 70% { transform: translateX(69.94px)rotate(175.42077675721123deg);}  
+ 71% { transform: translateX(69.96px)rotate(176.37529747213065deg);}  
+ 72% { transform: translateX(69.98px)rotate(177.29613640266308deg);}  
+ 73% { transform: translateX(70.00px) rotate(178.1738782391119deg);}  
+ 74% { transform: translateX(70.01px)rotate(179.00049436824003deg);}  
+ 75% { transform: translateX(70.02px) rotate(179.7693308875648deg);}  
+ 76% { transform: translateX(70.03px)rotate(180.47507926741747deg);}  
+ 77% { transform: translateX(70.04px)rotate(181.11373154658648deg);}  
+ 78% { transform: translateX(70.05px)rotate(181.68252199188316deg);}  
+ 79% { transform: translateX(70.06px) rotate(182.1798571668437deg);}  
+ 80% { transform: translateX(70.06px) rotate(182.6052363423609deg);}  
+ 81% { transform: translateX(70.07px)rotate(182.95916414484336deg);}  
+ 82% { transform: translateX(70.07px) rotate(183.2430572781536deg);}  
+ 83% { transform: translateX(70.08px)rotate(183.45914707678352deg);}  
+ 84% { transform: translateX(70.08px) rotate(183.6103795522116deg);}  
+ 85% { transform: translateX(70.09px)rotate(183.70031448486807deg);}  
+ 86% { transform: translateX(70.09px)rotate(183.73302499328122deg);}  
+ 87% { transform: translateX(70.09px) rotate(183.712998882384deg);}  
+ 88% { transform: translateX(70.09px)rotate(183.64504293710675deg);}  
+ 89% { transform: translateX(70.10px)rotate(183.53419118762827deg);}  
+ 90% { transform: translateX(70.10px)rotate(183.38561803120632deg);}  
+ 91% { transform: translateX(70.10px)rotate(183.20455695439873deg);}  
+ 92% { transform: translateX(70.10px) rotate(182.9962254605722deg);}  
+ 93% { transform: translateX(70.10px) rotate(182.7657566725534deg);}  
+ 94% { transform: translateX(70.10px)rotate(182.51813795056844deg);}  
+ 95% { transform: translateX(70.10px)rotate(182.25815674252823deg);}  
+ 96% { transform: translateX(70.10px)rotate(181.99035376831742deg);}  
+ 97% { transform: translateX(70.11px)rotate(181.71898353291837deg);}  
+ 98% { transform: translateX(70.11px)rotate(181.44798206563888deg);}  
+ 99% { transform: translateX(70.10px) rotate(181.1809416949206deg);}  
+ 100% { transform: translateX(70px) rotate(180.9210925905178deg);}
+}
