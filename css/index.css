@@ -476,12 +476,97 @@ section.wrapper > div.toggle_9 > #toggle-input-9:checked ~ .toggle-lable-9::befo
 section.wrapper > div.toggle_9 > #toggle-input-9:checked ~ .toggle-lable-9::after{
     background-color: lime;
 }
-
-
-
-
-
-
+/* ---------------------------------------| toggle 9 |------------------------------------------ */
+section.wrapper > div.toggle_10{
+    margin: 30px auto;
+    width: 90px;
+    height: 32px;
+}
+section.wrapper > div.toggle_10 > .toggle-lable-10{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(3, 56, 71);
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 5px 4px rgba(14, 113, 129, 0.7);
+}
+section.wrapper > div.toggle_10 > .toggle-lable-10 > .toggle-button-10,
+section.wrapper > div.toggle_10 > .toggle-lable-10 > .toggle-button-10 > .toggle-button-2,
+section.wrapper > div.toggle_10 > .toggle-lable-10 > .toggle-button-10 > .toggle-button-1{
+    position: absolute;
+    border-radius: 25px;
+}
+section.wrapper > div.toggle_10 > .toggle-lable-10 > .toggle-button-10{ 
+    width: 56px;
+    height: 30px;
+    background: linear-gradient(90deg ,#87edfd,#0e7181);
+    top: 1px;
+    left: 1px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.006) ,0 2px 6px rgba(0, 0, 0, 0.003),0 1px 3px rgba(0, 0, 0, 0.003);
+    transition: 0.3s ease-in-out;
+    z-index: 2;
+}
+section.wrapper > div.toggle_10 > .toggle-lable-10 > .toggle-button-10 > .toggle-button-1{
+    width: 46px;
+    height: 28px;
+    background: linear-gradient(90deg , #0d73a5,#6cd0e0,#e6fbfe);
+    top: 1px;
+    left: 5px;
+    filter: blur(2px);
+}
+section.wrapper > div.toggle_10 > .toggle-lable-10 > .toggle-button-10 > .toggle-button-2{
+    width: 48px;
+    height: 28px;
+    background: linear-gradient(90deg , #0d73a5,#52cde0,#b3f5ff);
+    top: 1px;
+    left: 4px;
+    box-shadow: 0 2px 6px hsl(0,0%,0%,0.3%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+section.wrapper > div.toggle_10 > .toggle-lable-10 > .toggle-button-10 > .toggle-button-2  .toggle-line{
+    display: block;
+    background-color: white;
+    width: 2px;
+    height: 12px;
+    box-shadow: 2px 0px 2px 0.5px rgba(0, 0, 0, 0.616);
+}
+section.wrapper > div.toggle_10 > .toggle-lable-10::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #52cde0;
+    position: absolute;
+    top: 50%;
+    left: -40%;
+    transform: translate(100% , -50%);
+}
+section.wrapper > div.toggle_10 > .toggle-lable-10::after{
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #0d73a5;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(20% , -50%);
+}
+section.wrapper > div.toggle_10 > #toggle-input-10:checked ~ .toggle-lable-10 > .toggle-button-10{
+    top: 1px;
+    left: 32px;
+}
+section.wrapper > div.toggle_10 > #toggle-input-10:checked ~ .toggle-lable-10::before{
+    border: 2px solid #0d73a5;
+}
+section.wrapper > div.toggle_10 > #toggle-input-10:checked ~ .toggle-lable-10::after{
+    border: 2px solid #abd3e7;
+}
+/* ---------------------------------------| animation Keyframes for toggle 4|------------------------------------------ */
 @keyframes epic-easing-spring-swift {  
  0% { transform: translateX(0px) rotate(0deg);}  
  1% { transform: translateX(1.09px)rotate(1.2693223577190085deg);}  
